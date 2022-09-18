@@ -106,9 +106,8 @@ export default function AddProject() {
                 <div className="form-floating mb-3">
                   <textarea
                     required
-                    rows="3"
                     type="text"
-                    className="form-control"
+                    className="form-control h-25"
                     id="description"
                     title="Project description"
                     placeholder="..."

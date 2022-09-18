@@ -13,6 +13,8 @@ const GET_PROJECT = gql`
       name
       description
       status
+      createdAt
+      updatedAt
       client {
         id
         name
@@ -44,6 +46,10 @@ export default function Project() {
           <p>{data.project.description}</p>
           <h3 className="mt-3">Status:</h3>
           <p>{data.project.status}</p>
+          <h3 className="mt-3">Created:</h3>
+          <p>{new Date(data.project.createdAt).toLocaleString()}</p>
+          <h3 className="mt-3">Last updated:</h3>
+          <p>{new Date(data.project.updatedAt).toLocaleString()}</p>
           <ClientInfo client={data.project.client} />
           <div className="card-footer border border-secondary mt-5">
             <UpdateProject project={data.project} />

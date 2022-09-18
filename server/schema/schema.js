@@ -1,5 +1,6 @@
 const { GraphQLInputObjectType, GraphQLID, GraphQLString, GraphQLSchema, GraphQLList, GraphQLObjectType,
   GraphQLNonNull, GraphQLEnumType } = require('graphql');
+const { GraphQLDateTime } = require('graphql-scalars');
 
 const Client = require('../models/Client');
 const Project = require('../models/Project');
@@ -11,6 +12,8 @@ const ProjectType = new GraphQLObjectType({
     name: { type: GraphQLString },
     description: { type: GraphQLString },
     status: { type: GraphQLString },
+    createdAt: { type: GraphQLDateTime },
+    updatedAt: { type: GraphQLDateTime },
     client: {
       type: ClientType,
       resolve(parent, args) {
