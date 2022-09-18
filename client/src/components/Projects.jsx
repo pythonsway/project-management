@@ -26,7 +26,7 @@ export default function Projects() {
   const { loading, error, data } = useQuery(GET_PROJECTS);
 
   if (loading) return <Spinner />;
-  if (error) return <p>Error...</p>;
+  if (error) return <p>{`Error! ${error.message}`}</p>;
   if (data.projects.length < 0) return <p>No Projects</p>;
 
   const groupedProjects = groupBy(data.projects, 'status');

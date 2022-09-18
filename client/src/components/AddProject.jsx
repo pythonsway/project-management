@@ -58,7 +58,7 @@ export default function AddProject() {
   };
 
   if (loading) return <Spinner />;
-  if (error) return <p>Error...</p>;
+  if (error) return <p>{`Error! ${error.message}`}</p>;
 
   return (
     <div className="mb-1">

@@ -3,9 +3,12 @@ const mongoose = require('mongoose');
 const ProjectSchema = new mongoose.Schema({
   name: {
     type: String,
+    required: true,
+    maxLength: 50,
   },
   description: {
     type: String,
+    maxLength: 500,
   },
   status: {
     type: String,

@@ -40,9 +40,11 @@ export default function AddClient() {
     e.preventDefault();
 
     addClient();
-    setName('');
-    setEmail('');
-    setPhone('');
+    if (success) {
+      setName('');
+      setEmail('');
+      setPhone('');
+    }
   };
 
   return (
@@ -71,7 +73,7 @@ export default function AddClient() {
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">
-              <Alerts action="Client added" mutationError={mutationError} success={success} />
+              <Alerts action="Client added" error={mutationError} success={success} />
 
               <form onSubmit={handleSubmit}>
                 <div className="form-floating mb-3">

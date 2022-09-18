@@ -30,7 +30,7 @@ export default function Project() {
   });
 
   if (loading) return <Spinner />;
-  if (error) return <p>Something went wrong.</p>;
+  if (error) return <p>{`Error! ${error.message}`}</p>;
 
   return (
     <div className="row">

@@ -25,7 +25,7 @@ export default function Clients() {
   };
 
   if (loading) return <Spinner />;
-  if (error) return <p>Error...</p>;
+  if (error) return <p>{`Error! ${error.message}`}</p>;
 
   return (
     <>
